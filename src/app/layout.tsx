@@ -1,0 +1,44 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/app/context/ThemeContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Chat } from "groq-sdk/resources/index.mjs";
+import Chatbot from "@/components/Chatbot2";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "aiCoderWithcoffee.com",
+  description: "create next app Niraj Roy",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`bg-white transition-colors dark:bg-gray-900 dark:text-white ${geistSans.variable} ${geistMono.variable}`}
+      >
+        <ThemeProvider>
+          <Navbar />
+          <main className="min-h-screen pt-24">{children}</main>
+          <Chatbot />
+          <Footer />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

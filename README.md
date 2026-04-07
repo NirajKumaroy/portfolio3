@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Portfolio Project
+
+# Portfolio 3
+
+A modern, responsive portfolio website built with Next.js 15, featuring a blog, services, projects showcase, and an AI-powered chatbot.
+
+## Features
+
+- **Responsive Design**: Optimized for all devices with Tailwind CSS
+- **Dark Mode**: Theme switching with next-themes
+- **Blog System**: Dynamic blog posts with search and filtering
+- **AI Chatbot**: Powered by Groq API for interactive conversations
+- **3D Elements**: Three.js integration for interactive 3D components
+- **Animations**: Smooth animations with Framer Motion
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **3D Graphics**: Three.js with React Three Fiber
+- **AI**: Groq SDK
+- **TypeScript**: Full type safety
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd portfolio3
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root directory and add your Groq API key:
+```env
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+4. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project requires the following environment variable:
 
-## Learn More
+- `GROQ_API_KEY`: Your Groq API key for the chatbot functionality
 
-To learn more about Next.js, take a look at the following resources:
+## Build and Run
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Build for production
+npm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+```
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Automatic Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add the `GROQ_API_KEY` environment variable in Vercel's dashboard:
+   - Go to your project settings
+   - Navigate to "Environment Variables"
+   - Add `GROQ_API_KEY` with your API key value
+4. Deploy!
+
+### Manual Deployment
+
+You can also deploy manually using the Vercel CLI:
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Add environment variable
+vercel env add GROQ_API_KEY
+```
+
+## Project Structure
+
+```
+portfolio3/
+├── public/                 # Static assets
+├── src/
+│   ├── app/               # Next.js app router
+│   │   ├── api/          # API routes
+│   │   ├── blogs/        # Blog pages
+│   │   ├── components/   # Reusable components
+│   │   ├── data/         # Static data
+│   │   └── ...
+│   └── utils/            # Utility functions
+├── .env                   # Environment variables
+├── next.config.ts         # Next.js configuration
+├── tailwind.config.js     # Tailwind CSS config
+└── package.json           # Dependencies and scripts
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

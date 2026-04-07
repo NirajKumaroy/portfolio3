@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/app/context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Chat } from "groq-sdk/resources/index.mjs";
 import Chatbot from "@/components/Chatbot2";
 
 const geistSans = Geist({

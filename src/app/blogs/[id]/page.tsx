@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { blogPosts } from "@/app/data/blogData";
 import { motion } from "framer-motion";
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const id = parseInt(params.id);
-  const post = blogPosts.find((post) => post.id === id);
+export default function BlogPostPage() {
+  const params = useParams();
+  const id = params.id as string;
+  const postId = parseInt(id);
+  const post = blogPosts.find((post) => post.id === postId);
 
   if (!post) {
     return (

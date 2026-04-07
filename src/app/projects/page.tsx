@@ -16,7 +16,7 @@ import image11 from "../../../public/images/QRcode.png";
 import image12 from "../../../public/images/portfolio.png";
 import image13 from "../../../public/images/ecommerce2.png";
 import image14 from "../../../public/images/blogpost2.png";
-import image15 from "../../../public/images/spacegame.png"
+import image15 from "../../../public/images/spacegame.png";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
 
@@ -44,7 +44,8 @@ const projects = [
   {
     id: 12,
     title: "portfolio website",
-    description: "Full-stack portfolio website with project showcase and contact form.",
+    description:
+      "Full-stack portfolio website with project showcase and contact form.",
     skills: "nextjs, tailwindcss, framer-motion ",
     image: image12,
     video: "/portfolio.mp4",
@@ -53,7 +54,8 @@ const projects = [
   {
     id: 13,
     title: "E-commerce Website",
-    description: "This is an E-commerce Website built using Next.js, Tailwind CSS, and Framer Motion.",
+    description:
+      "This is an E-commerce Website built using Next.js, Tailwind CSS, and Framer Motion.",
     skills: "nextjs, tailwindcss, framer-motion ",
     image: image13,
     video: "/e-commerce.mp4",
@@ -62,7 +64,8 @@ const projects = [
   {
     id: 14,
     title: "Blog Post Website",
-    description: "This is a Blog Post Website built using Next.js, Tailwind CSS, and Framer Motion.",
+    description:
+      "This is a Blog Post Website built using Next.js, Tailwind CSS, and Framer Motion.",
     skills: "nextjs, tailwindcss, framer-motion ",
     image: image14,
     video: "/blogpost.mp4",
@@ -109,7 +112,8 @@ const projects = [
   {
     id: 5,
     title: "Candy Crush Game",
-    description: "This is Candy Crush Game build this game html,css and Javascript.",
+    description:
+      "This is Candy Crush Game build this game html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image1,
     video: "/Candy.mp4",
@@ -119,7 +123,8 @@ const projects = [
   {
     id: 6,
     title: "Movies search",
-    description: "This is Movies Search web page build this page using html,css and Javascript.",
+    description:
+      "This is Movies Search web page build this page using html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image6,
     video: "/Movies.mp4",
@@ -128,7 +133,8 @@ const projects = [
   {
     id: 7,
     title: "Resume builder",
-    description: "This is Resume Builder web page build this page using html,css and Javascript.",
+    description:
+      "This is Resume Builder web page build this page using html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image7,
     video: "/Resume.mp4",
@@ -137,7 +143,8 @@ const projects = [
   {
     id: 8,
     title: "Doctor health appointment",
-    description: "This is Doctor Health Appointment web page build this page using html,css and Javascript.",
+    description:
+      "This is Doctor Health Appointment web page build this page using html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image8,
     video: "/doctor.mp4",
@@ -146,7 +153,8 @@ const projects = [
   {
     id: 9,
     title: "Music E-Commerce Store",
-    description: "This is Music E-Commerce Store web page build this page using html,css and Javascript.",
+    description:
+      "This is Music E-Commerce Store web page build this page using html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image9,
     video: "/muVideo.mp4",
@@ -155,7 +163,8 @@ const projects = [
   {
     id: 10,
     title: "Calculator App",
-    description: "This is Calculator App build this app using html,css and Javascript.",
+    description:
+      "This is Calculator App build this app using html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image5,
     video: "/calculator.mp4",
@@ -164,18 +173,19 @@ const projects = [
   {
     id: 11,
     title: "QRcode Generator",
-    description: "This is QRcode Generator web page build this page using html,css and Javascript.",
+    description:
+      "This is QRcode Generator web page build this page using html,css and Javascript.",
     skills: "Html, Css, Javascrit",
     image: image11,
     video: "/QRcode.mp4",
     github: "https://github.com/NirajKumaroy",
   },
-  
+
   // Add more up to 10 projects with same structure
 ];
 
 export default function ProjectSection() {
-  const [activeVideo, setActiveVideo] = useState(null);
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
   return (
     <section className="bg-white  dark:bg-gradient-to-r from-blue-500 to-purple-500 py-12">
@@ -226,7 +236,7 @@ export default function ProjectSection() {
                 </button>
               </div>
             </div>
-          )
+          ),
         )}
       </motion.div>
 

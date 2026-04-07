@@ -2,16 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { services } from "@/app/servicesData/servicesData";
 
-export default function servicesPostPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const id = Number.parseInt(params.id);
-  const post = services.find((post) => post.id === id);
+export default function ServicesPostPage() {
+  const params = useParams();
+  const id = params.id as string;
+  const postId = Number.parseInt(id);
+  const post = services.find((post) => post.id === postId);
 
   if (!post) {
     return (
@@ -26,7 +25,7 @@ export default function servicesPostPage({
             Service not found
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mb-8">
-            The service you&apos;re looking for doesn&apos;t exist or has been
+            The service you&apos;re looking for does &apos;t exist or has been
             removed.
           </p>
           <Link
@@ -141,7 +140,7 @@ export default function servicesPostPage({
                   "24/7 dedicated support and maintenance",
                 ].map((feature, index) => (
                   <motion.div
-                    key={index}
+                    key={feature}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}

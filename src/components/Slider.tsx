@@ -4,35 +4,35 @@ import { motion } from "framer-motion";
 import { scaleIn } from "@/utils/animations";
 import Image from "next/image";
 
-export default function SliderPage() {
+export default function Slider() {
   const slides = [
     {
       id: 1,
       image: "/assets/cl1.jpeg",
       title: "Slide One",
       description:
-        "Hey i am Dhiraj kumar  this is good developer create my website juice shop i seal near order hostel and restorant .  ",
+        "Hey, I am Dhiraj Kumar, a good developer who created a website for a juice shop. I sell near order hostels and restaurants.",
     },
     {
       id: 2,
       image: "/assets/cl2.png",
       title: "Slide Two",
       description:
-        "Hi i am dr. Rintu Kumar this is good developer my website create health care appointment application and good  Experience the beauty of nature in this field .",
+        "Hi, I am Dr. Rintu Kumar, a good developer who created a website for a health care appointment application with great experience. Experience the beauty of nature in this field.",
     },
     {
       id: 3,
       image: "/assets/cl3.png",
       title: "Slide Three",
       description:
-        "Hi i am Sambhu Das this is good developer my website create health care appointment application and good  Experience the beauty of nature in this field . ",
+        "Hi, I am Sambhu Das, a good developer who created a website for a health care appointment application with great experience. Experience the beauty of nature in this field.",
     },
     {
       id: 4,
       image: "/assets/manicon.png",
       title: "Slide Four",
       description:
-        "Hi i am mohit Kumar this boy good developer create my website i seal makhana . ",
+        "Hi, I am Mohit Kumar, a good developer who created a website for selling makhana.",
     },
   ];
 
@@ -40,7 +40,7 @@ export default function SliderPage() {
   const [isPaused, setIsPaused] = useState(false);
 
   const AUTO_PLAY = true;
-  const AUTO_PLAY_INTERVAL = 1000;
+  const AUTO_PLAY_INTERVAL = 4000;
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -56,13 +56,16 @@ export default function SliderPage() {
       setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, AUTO_PLAY_INTERVAL);
     return () => clearInterval(id);
-  }, [isPaused]);
+  }, [isPaused, AUTO_PLAY, slides.length]);
 
   return (
-    <div
+    <section
+      aria-label="Autoplay slider"
       className="relative w-full h-screen flex items-center justify-center overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
     >
       <div className="w-screen  h-screen flex items-center justify-center transition-all duration-700 ease-in-out">
         <div className="flex text-black dark:text-white flex-col items-center">
@@ -95,20 +98,24 @@ export default function SliderPage() {
             className="text-base md:text-xl text-gray-900 max-w-xl text-center"
           >
             {slides[currentIndex].description}
-            <h1 className="p-2">⭐⭐⭐⭐⭐</h1>
           </motion.p>
+          <motion.div {...scaleIn} transition={{ delay: 0.5 }} className="p-2">
+            ⭐⭐⭐⭐⭐
+          </motion.div>
         </div>
       </div>
 
       {/* Navigation */}
       <button
         onClick={prevSlide}
+        aria-label="Previous slide"
         className="absolute left-4 text-white text-3xl bg-black/50 px-3 py-1 rounded-full hover:bg-black/80"
       >
         ❮
       </button>
       <button
         onClick={nextSlide}
+        aria-label="Next slide"
         className="absolute right-4 text-white text-3xl bg-black/50 px-3 py-1 rounded-full hover:bg-black/80"
       >
         ❯
@@ -116,16 +123,17 @@ export default function SliderPage() {
 
       {/* Dots */}
       <div className="absolute bottom-6 flex gap-2">
-        {slides.map((_, index) => (
+        {slides.map((slide, index) => (
           <button
-            key={index}
+            key={slide.id}
             onClick={() => setCurrentIndex(index)}
+            aria-label={`Go to slide ${index + 1}`}
             className={`w-3 h-3 rounded-full ${
               index === currentIndex ? "bg-white" : "bg-gray-400"
             }`}
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 }

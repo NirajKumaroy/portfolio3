@@ -61,9 +61,6 @@ export default function BlogPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-8 md:mb-12"
           >
-            <span className="inline-block text-xs sm:text-sm font-bold text-blue-200 dark:text-blue-300 uppercase tracking-widest mb-3 sm:mb-4">
-              ✍️ Insights & Tutorials
-            </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               My <span className="text-yellow-300">Blog</span>
             </h1>
@@ -132,6 +129,7 @@ export default function BlogPage() {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
+                aria-label="Sort articles by"
                 className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl border-0 shadow-lg bg-white/95 backdrop-blur-sm text-gray-900 focus:ring-4 focus:ring-white/30 text-sm sm:text-base font-medium"
               >
                 <option value="newest">Newest First</option>
@@ -168,7 +166,7 @@ export default function BlogPage() {
               >
                 <p className="text-blue-100 text-xs sm:text-sm font-medium">
                   Found {filteredPosts.length} article
-                  {filteredPosts.length !== 1 ? "s" : ""}
+                  {filteredPosts.length === 1 ? "" : "s"}
                   {searchTerm && ` matching "${searchTerm}"`}
                   {selectedCategory !== "All" && ` in ${selectedCategory}`}
                 </p>

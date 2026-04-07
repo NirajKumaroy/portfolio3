@@ -73,12 +73,20 @@ export default function BlogPage() {
               </span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Insights &{" "}
-              <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                Tutorials
-              </span>
-            </h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }} 
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.
+6 }}              className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Dive into <br />  
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+                Web Development
+              </span>{" "}
+              Insights
+            </motion.h1>
+
+            
             <p className="text-xl md:text-2xl text-indigo-100 mb-12 max-w-4xl mx-auto leading-relaxed">
               Discover cutting-edge web development techniques, design
               principles, and technology insights that will elevate your coding

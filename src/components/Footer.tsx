@@ -20,7 +20,7 @@ function Footer() {
             href="/"
             className="text-xl font-bold items-start text-red-400 p-5"
           >
-            codeWater&trade;
+            aiCoderWithcoffee&trade;
           </Link>
           <div className="mb-1">
             <FaEnvelope className="inline-block text-red-400 mr-2"></FaEnvelope>
@@ -28,30 +28,30 @@ function Footer() {
               href="mailto:youremail@example.com"
               className="font-bold cursor-pointer"
             >
-              {" "}
-              Email Us : nirajbgs0@gmail.com
+              
+              Email Us :  nirajbgs0@gmail.com
             </a>
           </div>
           <div className="mb-1">
             <FaPhone className="inline-block text-red-400 mr-2"></FaPhone>
             <span className="font-bold cursor-pointer">
-              Contact No : +91-7667556440
+              Contact No :  +91-7667556440
             </span>
           </div>
           <div className="mb-1">
             <FaMapMarkedAlt className="inline-block text-red-400 mr-2"></FaMapMarkedAlt>
             <span className="font-bold cursor-pointer">
-              Address : Patna Bihar,India
+              Address :  Patna Bihar,India
             </span>
           </div>
           <Image className="w-20 h-20 mb-2" src={logo1} alt="" />
         </div>
 
         <div className="hidden md:block">
-          <h2 className="font-bold text-xl mt-4">CodeWater</h2>
+          <h2 className="font-bold text-xl mt-4">aiCoderWithcoffee</h2>
           <div className="w-20 h-1 border-b-2 border-red-400 rounded-2xl my-2"></div>
           <div className="font-bold cursor-pointer">
-            <p>Aobut Us</p>
+            <p>About Us</p>
             <p>FAQS</p>
             <p>Privacy Policy</p>
           </div>
@@ -59,7 +59,7 @@ function Footer() {
 
         <div className=" mr-5">
           <h2 className="font-bold text-xl mt-4 ">Quick Link</h2>
-          <div className="w-18 h-1 border-b-2 mr-5 border-red-400 rounded-2xl my-2"></div>
+          <div className="w-20 h-1 border-b-2 mr-5 border-red-400 rounded-2xl my-2"></div>
           <div className="flex flex-col font-bold cursor-pointer">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
@@ -71,8 +71,8 @@ function Footer() {
         </div>
 
         <div className="hidden md:block mr-10">
-          <h2 className="font-bold text-xl mt-5">follow Us</h2>
-          <div className="w-18 h-1 border-b-2 border-red-400 rounded-2xl my-2"></div>
+          <h2 className="font-bold text-xl mt-5">Follow Us</h2>
+          <div className="w-20 h-1 border-b-2 border-red-400 rounded-2xl my-2"></div>
           <span className=" justify-center items-center mt-5 gap-2 text-4xl">
             <Link className="bg-black" href="https://github.com/NirajKumaroy">
               <FaGithubSquare />
@@ -83,15 +83,15 @@ function Footer() {
             >
               <FaLinkedin />
             </Link>
-            <Link className="bg-black" href="">
+            <Link className="bg-black" href="#">
               <FaInstagramSquare />
             </Link>
           </span>
         </div>
       </div>
       <p className="bg-amber-700 text-white dark:text-black h-14 font-bold text-center pt-4 text-sm">
-        Welcome aiCoderWithcoffee. &copy; {new Date().getFullYear()}{" "}
-        MySite aiCoderWithcoffee. All rights reserved.
+        Welcome aiCoderWithcoffee. &copy; {new Date().getFullYear()} MySite
+        aiCoderWithcoffee. All rights reserved.
       </p>
     </>
   );

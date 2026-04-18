@@ -167,6 +167,8 @@ function Services() {
               Get in touch and let&apos;s discuss how I can help bring your
               vision to life
             </p>
+            
+            <Link href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -174,6 +176,7 @@ function Services() {
             >
               Contact Me
             </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>

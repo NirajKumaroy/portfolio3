@@ -50,7 +50,8 @@ export default function Chatbot2() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 border-1 bg-gray-800 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
+          title="Open chatbot"
+          className="fixed bottom-6 right-6 border bg-gray-800 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
         >
           <BotMessageSquare
             size={24}
@@ -65,7 +66,7 @@ export default function Chatbot2() {
           {/* Header */}
           <div className=" flex items-center justify-between p-3 bg-gray-800 text-white">
             <h2 className="font-semibold ">Chatbot 🤖</h2>
-            <button onClick={() => setIsOpen(false)}>
+            <button onClick={() => setIsOpen(false)} title="Close chatbot">
               <X size={24} />
             </button>
           </div>

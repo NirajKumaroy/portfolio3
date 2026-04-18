@@ -12,7 +12,6 @@ import { useState } from "react";
 import Image from "next/image";
 import img from "../../public/logoai1.png";
 
-
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,12 +30,12 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-60">
+    <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50">
       <div className="container max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="text-xl font-bold text-red-400">
-           <Image className="w-30 h-16 mb-2 " src={img} alt="" />
-          
+            <Image className="w-32 h-16 mb-2 " src={img} alt="" />
+
             {/* aicodeWithcoffee&trade; */}
           </Link>
 

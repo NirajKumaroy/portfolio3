@@ -67,14 +67,14 @@ export default function Slider() {
       onTouchStart={() => setIsPaused(true)}
       onTouchEnd={() => setIsPaused(false)}
     >
-      <div className="w-screen  h-screen flex items-center justify-center transition-all duration-700 ease-in-out">
+      <div className="w-full h-screen flex items-center justify-center transition-all duration-700 ease-in-out">
         <div className="flex text-black dark:text-white flex-col items-center">
           <motion.h1
             {...scaleIn}
             transition={{ delay: 0.1 }}
             className="text-4xl text-center font-bold  mb-6"
           >
-            Build This Client Projects
+            Built These Client Projects
           </motion.h1>
           <motion.div {...scaleIn} transition={{ delay: 0.2 }}>
             <Image

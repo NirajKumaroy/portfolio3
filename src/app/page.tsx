@@ -13,7 +13,6 @@ import RobotCanvas from "../components/RobotCanvas";
 import { fadeInUp, scaleIn } from "@/utils/animations";
 import logo from "../../public/Hero.png";
 import logo1 from "../../public/mernstack.png";
-import Chatbot from "@/components/Chatbot2";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -50,8 +49,11 @@ export default function Home() {
 
     const timeout = setTimeout(
       () => {
-        setSubIndex((prev) => prev + (deleting ? -1 : 1));
-        setText(current.substring(0, subIndex));
+        setSubIndex((prev) => {
+          const newIndex = prev + (deleting ? -1 : 1);
+          setText(current.substring(0, newIndex));
+          return newIndex;
+        });
       },
       deleting ? 50 : 150,
     );
@@ -60,23 +62,23 @@ export default function Home() {
   }, [subIndex, index, deleting]);
 
   return (
-    <div className="relative h-screen ">
-      <div className=" absolute inset-0 z-10 text-black dark:text-white text-left flex items-center justify-center">
-        <div className="flex items-center flex-col md:flex-row gap-5 sm:gap-10 md:gap-20 lg:gap-80 w-full px-4 sm:px-6 md:px-8 max-w-7xl mx-auto mr-0 ml-0">
-          <div className="flex flex-col text-center md:text-left justify-center max-w-md md:max-w-lg lg:pr-16">
+    <div className="relative min-h-[calc(100vh-6rem)] w-full bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+      <div className="absolute inset-0 z-10 text-black dark:text-white flex flex-col justify-center pb-10 pointer-events-none">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12 md:gap-16 w-full px-6 sm:px-8 md:px-12 max-w-7xl mx-auto pointer-events-auto z-20">
+          <div className="flex flex-col text-center md:text-left justify-center flex-1 max-w-xl">
             <motion.h1
               {...scaleIn}
               transition={{ delay: 0.2 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-2xl font-bold text-center md:text-left mb-2"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center md:text-left mb-2"
             >
-              👋 Hello!
+              👋Hello {"!"}
             </motion.h1>
             <motion.h2
               {...fadeInUp}
               transition={{ delay: 0.3 }}
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center md:text-left mb-2"
             >
-              Hi, I&apos;m <span className="text-red-400">Niraj Kumar</span>
+              Hi, I&apos;m <span className="text-red-400">Niraj Kumar 👋</span>
             </motion.h2>
             <motion.h3
               {...fadeInUp}
@@ -92,13 +94,13 @@ export default function Home() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center md:text-left text-red-400 mb-4"
             >
               {text}
-              <span className="border-r-2 border-white animate-pulse ml-1" />
+              <span className="border-r-2 border-black dark:border-white animate-pulse ml-1" />
             </motion.h2>
 
             <motion.p
               {...scaleIn}
               transition={{ delay: 0.2 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-base font-bold text-center md:text-left mb-1"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center md:text-left mb-1"
             >
               Welcome to my YouTube channel, aicoderwithcoffee
             </motion.p>
@@ -113,7 +115,7 @@ export default function Home() {
             <motion.div
               {...fadeInUp}
               transition={{ delay: 0.7 }}
-              className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 mt-4"
+              className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mt-6"
             >
               <Link
                 href="/contact"
@@ -133,7 +135,7 @@ export default function Home() {
             <motion.span
               {...fadeInUp}
               transition={{ delay: 0.8 }}
-              className="flex justify-center items-center mt-6 gap-3 text-2xl sm:text-3xl md:text-4xl"
+              className="flex items-center justify-center md:justify-start p-2 gap-4 text-2xl sm:text-3xl md:text-4xl mt-2"
             >
               <Link
                 className="bg-black text-white p-2 rounded-lg hover:bg-red-400 transition-all duration-300"
@@ -165,22 +167,25 @@ export default function Home() {
           <motion.div
             {...fadeInUp}
             transition={{ delay: 0.9 }}
-            className="flex flex-col items-center justify-center gap-4"
+            className="flex flex-col items-center justify-center gap-6 flex-1 w-full max-w-md lg:max-w-lg md:pl-50 sm:pl-0"
           >
             <Image
-              className="w-32 h-24 sm:w-40 sm:h-28 md:w-48 md:h-32 lg:w-60 lg:h-30"
               src={logo1}
-              alt="mernstack.png"
+              alt="MERN Stack"
+              width={128}
+              height={96}
+              className="w-28 h-auto sm:w-36 md:w-44 lg:w-56 object-contain"
             />
 
             <Image
-              className="w-48 h-64 sm:w-64 sm:h-80 md:w-80 md:h-96 lg:w-96 lg:h-[28.4rem]"
               src={logo}
-              alt="hero.png"
+              alt="Hero Banner"
+              width={192}
+              height={256}
+              className="w-48 h-auto sm:w-64 md:w-72 lg:w-80 xl:w-96 object-contain"
             />
           </motion.div>
         </div>
-        <Chatbot />
       </div>
 
       <RobotCanvas />

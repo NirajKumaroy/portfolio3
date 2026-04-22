@@ -14,12 +14,13 @@ export default function BlogPage() {
 
   const filteredPosts = blogPosts
     .filter((post) => {
+      const searchLower = searchTerm.toLowerCase();
       const matchesSearch =
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.h1?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.content?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.h?.toLowerCase().includes(searchTerm.toLowerCase());
+        (post.title?.toLowerCase() || "").includes(searchLower) ||
+        (post.description?.toLowerCase() || "").includes(searchLower) ||
+        (post.h1?.toLowerCase() || "").includes(searchLower) ||
+        (post.content?.toLowerCase() || "").includes(searchLower) ||
+        (post.h?.toLowerCase() || "").includes(searchLower);
       const matchesCategory =
         selectedCategory === "All" || post.h === selectedCategory;
       return matchesSearch && matchesCategory;
@@ -156,6 +157,7 @@ export default function BlogPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
+                    aria-label="Sort by"
                     className="appearance-none px-6 py-3 pr-10 rounded-xl border-0 shadow-xl bg-white/95 backdrop-blur-sm text-gray-900 focus:ring-4 focus:ring-white/50 text-sm font-medium"
                   >
                     <option value="newest">🕒 Newest First</option>
@@ -220,7 +222,7 @@ export default function BlogPage() {
                       <span className="font-bold text-white">
                         {filteredPosts.length}
                       </span>{" "}
-                      article{filteredPosts.length !== 1 ? "s" : ""}
+                      article{filteredPosts.length === 1 ? "" : "s"}
                       {searchTerm && ` matching "${searchTerm}"`}
                       {selectedCategory !== "All" && ` in ${selectedCategory}`}
                     </span>

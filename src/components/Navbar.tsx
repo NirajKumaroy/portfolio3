@@ -35,8 +35,6 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="text-xl font-bold text-red-400">
             <Image className="w-32 h-16 mb-2 " src={img} alt="" />
-
-            {/* aicodeWithcoffee&trade; */}
           </Link>
 
           {/* Desktop Menu */}

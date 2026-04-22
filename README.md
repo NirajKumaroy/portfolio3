@@ -1,5 +1,3 @@
-# Next.js Portfolio Project
-
 # Portfolio 3
 
 A modern, responsive portfolio website built with Next.js 15, featuring a blog, services, projects showcase, and an AI-powered chatbot.
@@ -27,31 +25,35 @@ A modern, responsive portfolio website built with Next.js 15, featuring a blog, 
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 24+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd portfolio3
-```
+
+   ```bash
+   git clone <your-repo-url>
+   cd portfolio3
+   ```
 
 2. Install dependencies:
-```bash
-npm install
-```
+
+   ```bash
+   npm install
+   ```
 
 3. Create a `.env` file in the root directory and add your Groq API key:
-```env
-GROQ_API_KEY=your_groq_api_key_here
-```
+
+   ```env
+   GROQ_API_KEY=your_groq_api_key_here
+   ```
 
 4. Run the development server:
-```bash
-npm run dev
-```
+
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -103,7 +105,7 @@ vercel env add GROQ_API_KEY
 
 ## Project Structure
 
-```
+```text
 portfolio3/
 ├── public/                 # Static assets
 ├── src/

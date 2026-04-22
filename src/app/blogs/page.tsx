@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/app/data/blogData";
 import { motion } from "framer-motion";
-//import { fadeInUp } from "@/utils/animations";
+
 import { useState } from "react";
 
 export default function BlogPage() {
@@ -15,12 +15,13 @@ export default function BlogPage() {
 
   const filteredPosts = blogPosts
     .filter((post) => {
+      const searchLower = searchTerm.toLowerCase();
       const matchesSearch =
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.h1?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.content?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.h?.toLowerCase().includes(searchTerm.toLowerCase());
+        (post.title?.toLowerCase() || "").includes(searchLower) ||
+        (post.description?.toLowerCase() || "").includes(searchLower) ||
+        (post.h1?.toLowerCase() || "").includes(searchLower) ||
+        (post.content?.toLowerCase() || "").includes(searchLower) ||
+        (post.h?.toLowerCase() || "").includes(searchLower);
       const matchesCategory =
         selectedCategory === "All" || post.h === selectedCategory;
       return matchesSearch && matchesCategory;

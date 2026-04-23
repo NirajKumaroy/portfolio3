@@ -78,7 +78,7 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center md:text-left mb-2"
             >
-              Hi, I&apos;m <span className="text-red-400">Niraj Kumar 👋</span>
+              Hi, I&apos;m  <span className="text-red-400">Niraj Kumar 👋</span>
             </motion.h2>
             <motion.h3
               {...fadeInUp}
@@ -86,7 +86,7 @@ export default function Home() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center md:text-left mb-2"
             >
               <span className="text-red-400">and </span>
-              <span>I&apos;m a passionate </span>
+              <span>I&apos;m  a passionate </span>
             </motion.h3>
             <motion.h2
               {...fadeInUp}
@@ -102,7 +102,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center md:text-left mb-1"
             >
-              Welcome to my YouTube channel, aicoderwithcoffee
+              Welcome to my YouTube channel aicoderwithcoffee
             </motion.p>
 
             <motion.p
@@ -171,7 +171,7 @@ export default function Home() {
           >
             <Image
               src={logo1}
-              alt="MERN Stack"
+              alt="MERStack"
               width={128}
               height={96}
               className="w-28 h-auto sm:w-36 md:w-44 lg:w-56 object-contain"

@@ -13,23 +13,23 @@ function RobotModel() {
   const positionY = viewport.width < 4 ? -0.8 : -1;
 
   useEffect(() => {
-    if (actions && animations.length > 0) {
-      // Log available animations for debugging
-      console.log(
-        "Available Animations:",
-        animations.map((a) => a.name),
-      );
+    if (!actions || animations.length === 0) return;
 
-      // Select the best animation based on name priority
-      const preferredAnimation =
-        actions["Dance"] ||
-        actions["Walking"] ||
-        actions["Run"] ||
-        actions["Idle"] ||
-        actions[animations[0].name];
+    // Select the best animation based on name priority
+    const animationName =
+      ["Dance", "Walking", "Run", "Idle"].find((name) => actions[name]) ||
+      animations[0]?.name;
 
+    const preferredAnimation = animationName ? actions[animationName] : null;
+
+    if (preferredAnimation) {
       // Play the selected animation with fade-in
-      preferredAnimation?.reset().fadeIn(0.5).play();
+      preferredAnimation.reset().fadeIn(0.5).play();
+
+      // Cleanup to avoid ghost animations in React 18 Strict Mode
+      return () => {
+        preferredAnimation.fadeOut(0.5);
+      };
     }
   }, [actions, animations]);
 
@@ -42,6 +42,9 @@ function RobotModel() {
     />
   );
 }
+
+// Preload the 3D model to prevent Suspense fallback delays
+useGLTF.preload("/Models/robot.glb");
 
 export default function RobotCanvas() {
   return (

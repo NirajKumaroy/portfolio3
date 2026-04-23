@@ -73,7 +73,7 @@ function About() {
                   in the MERN stack (MongoDB, Express.js, React, and Node.js), I
                   have built Projects such as a full-stack food ordering website
                   , a job portal, and even a LinkedIn clone. My projects
-                  demonstrate my ability to integrate poweful backend solutions
+                  demonstrate my ability to integrate powerful backend solutions
                   with sleek, user-friendly frontend designs.
                 </p>
                 <Image
@@ -151,7 +151,9 @@ function About() {
                 a web developer with Two years of experience i recently
                 completed a web development course from{" "}
                 <span className="text-white cursor-pointer">
-                  <a href="https://pwskills.com">pwskills.com</a>
+                  <a href="https://pwskills.com">
+                   pwskills.com
+                  </a>
                 </span>{" "}
                 which has given me the latest skills and knowledge in the web
                 development industry i learned practical skills in building

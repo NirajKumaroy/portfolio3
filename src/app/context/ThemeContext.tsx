@@ -1,7 +1,6 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-
 type Theme = "light" | "dark";
 
 interface ThemeContextType {
@@ -12,38 +11,40 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
+export function ThemeProvider({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const [theme, setThemeState] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
 
   // Update theme
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+
+    if (globalThis.window !== undefined) {
+      globalThis.localStorage.setItem("theme", newTheme);
+      document.documentElement.classList.toggle("dark", newTheme === "dark");
+    }
   };
 
   // Toggle theme
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
-    console.log(theme);
   };
 
   // Initialize theme
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null;
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    if (globalThis.window === undefined) return;
+
+    const savedTheme = globalThis.localStorage.getItem("theme") as Theme | null;
+    const systemTheme =
+      globalThis.matchMedia?.("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
     const initialTheme = savedTheme || systemTheme;
 
-    setThemeState(initialTheme);
-    document.documentElement.classList.toggle("dark", initialTheme === "dark");
-    setMounted(true);
+    // Reuse the main setTheme function
+    setTheme(initialTheme);
   }, []);
-
-  // Prevent flash of wrong theme
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>

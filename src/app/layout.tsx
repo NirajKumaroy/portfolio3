@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { ThemeProvider } from "@/app/context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "aiCoderWithcoffee.com",
-  description: "create next app Niraj Roy",
+  description:
+    "Portfolio of Niraj Roy - Full Stack Developer and Content Creator",
 };
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`bg-white transition-colors dark:bg-gray-900 dark:text-white ${geistSans.variable} ${geistMono.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white transition-colors dark:bg-gray-900 dark:text-white`}
       >
         <ThemeProvider>
           <Navbar />

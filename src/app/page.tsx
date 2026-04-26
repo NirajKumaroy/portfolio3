@@ -9,10 +9,14 @@ import {
   FaYoutubeSquare,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import RobotCanvas from "../components/RobotCanvas";
+import dynamic from "next/dynamic";
 import { fadeInUp, scaleIn } from "@/utils/animations";
 import logo from "../../public/Hero.png";
 import logo1 from "../../public/mernstack.png";
+
+const RobotCanvas = dynamic(() => import("../components/RobotCanvas"), {
+  ssr: false,
+});
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -62,7 +66,7 @@ export default function Home() {
   }, [subIndex, index, deleting]);
 
   return (
-    <div className="relative min-h-[calc(100vh-6rem)] w-full bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
+    <div className="relative min-h-[calc(100vh-6rem)] w-full bg-linear-to-r from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-800 overflow-hidden">
       <div className="absolute inset-0 z-10 text-black dark:text-white flex flex-col justify-center pb-10 pointer-events-none">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12 md:gap-16 w-full px-6 sm:px-8 md:px-12 max-w-7xl mx-auto pointer-events-auto z-20">
           <div className="flex flex-col text-center md:text-left justify-center flex-1 max-w-xl">
@@ -78,7 +82,7 @@ export default function Home() {
               transition={{ delay: 0.3 }}
               className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-center md:text-left mb-2"
             >
-              Hi, I&apos;m  <span className="text-red-400">Niraj Kumar 👋</span>
+              Hi, I&apos;m <span className="text-red-400">Niraj Kumar 👋</span>
             </motion.h2>
             <motion.h3
               {...fadeInUp}
@@ -86,7 +90,7 @@ export default function Home() {
               className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-center md:text-left mb-2"
             >
               <span className="text-red-400">and </span>
-              <span>I&apos;m  a passionate </span>
+              <span>I&apos;m a passionate </span>
             </motion.h3>
             <motion.h2
               {...fadeInUp}
@@ -123,13 +127,13 @@ export default function Home() {
               >
                 Hire Me
               </Link>
-              <Link
+              <a
                 href="/FRONTEND.pdf"
                 download
                 className="bg-black text-white px-4 py-2 border-2 rounded-xl text-sm sm:text-base text-center hover:bg-white hover:text-black hover:border-black lg:border-red-400 dark:border-white transition-all duration-300"
               >
                 Download CV
-              </Link>
+              </a>
             </motion.div>
 
             <motion.span
@@ -140,24 +144,32 @@ export default function Home() {
               <Link
                 className="bg-black text-white p-2 rounded-lg hover:bg-red-400 transition-all duration-300"
                 href="https://github.com/NirajKumaroy"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaGithubSquare />
               </Link>
               <Link
                 className="bg-black text-white p-2 rounded-lg hover:bg-red-400 transition-all duration-300"
                 href="https://www.linkedin.com/in/niraj-kumar-%F0%9F%87%AE%F0%9F%87%B3-685a55254/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaLinkedin />
               </Link>
               <Link
                 className="bg-black text-white p-2 rounded-lg hover:bg-red-400 transition-all duration-300"
                 href="https://www.instagram.com/nirajroy50/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaInstagramSquare />
               </Link>
               <Link
                 className="bg-black text-white p-2 rounded-lg hover:bg-red-400 transition-all duration-300"
                 href="https://www.youtube.com/@aiCoderwithCoffee-10003M"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <FaYoutubeSquare />
               </Link>

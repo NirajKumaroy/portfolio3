@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
-import { ThemeProvider } from "@/app/context/ThemeContext";
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot2";
@@ -30,9 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white transition-colors dark:bg-gray-900 dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white text-gray-900 transition-colors dark:bg-gray-900 dark:text-white`}
       >
-        <ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <Navbar />
           <main className="min-h-screen pt-24">{children}</main>
           <Chatbot />

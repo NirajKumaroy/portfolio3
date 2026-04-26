@@ -18,11 +18,12 @@ import imgpng from "../../../public/imgpng.jpg";
 
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/utils/animations";
+import Link from "next/link";
 
 function About() {
   return (
     <div className="relative " id="about">
-      <div className="bg-white dark:bg-gradient-to-r from-blue-500 to-purple-500 py-12">
+      <div className="bg-white dark:bg-linear-to-r from-blue-500 to-purple-500 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.h2
@@ -150,10 +151,10 @@ function About() {
                 electronics engineering but i am interested web development i am
                 a web developer with Two years of experience i recently
                 completed a web development course from{" "}
-                <span className="text-white cursor-pointer">
-                  <a href="https://pwskills.com">
+                <span className="text-red-400 cursor-pointer">
+                  <Link href="https://pwskills.com">
                    pwskills.com
-                  </a>
+                  </Link>
                 </span>{" "}
                 which has given me the latest skills and knowledge in the web
                 development industry i learned practical skills in building

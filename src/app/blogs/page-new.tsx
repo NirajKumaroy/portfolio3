@@ -41,13 +41,13 @@ export default function BlogPage() {
   const featuredPost = blogPosts[0];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-indigo-100/50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Enhanced Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative overflow-hidden bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-800 dark:via-purple-800 dark:to-pink-900"
+        className="relative overflow-hidden bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-800 dark:via-purple-800 dark:to-pink-900"
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
@@ -76,7 +76,7 @@ export default function BlogPage() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
               Dive into <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-orange-400">
                 Web Development
               </span>{" "}
               Insights
@@ -97,7 +97,7 @@ export default function BlogPage() {
             >
               {/* Enhanced Search Bar */}
               <div className="relative mb-8">
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-lg rounded-2xl border border-white/20"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-white/20 to-white/10 backdrop-blur-lg rounded-2xl border border-white/20"></div>
                 <div className="relative flex items-center">
                   <div className="flex-1 relative">
                     <input
@@ -249,14 +249,14 @@ export default function BlogPage() {
               transition={{ duration: 0.5 }}
               className="inline-block mb-4"
             >
-              <span className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold rounded-full shadow-lg">
+              <span className="px-4 py-2 bg-linear-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold rounded-full shadow-lg">
                 ⭐ FEATURED ARTICLE
               </span>
             </motion.div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               Must Read
             </h2>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            <div className="w-32 h-1.5 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
           </div>
 
           <Link href={`/blogs/${featuredPost.id}`}>
@@ -274,13 +274,13 @@ export default function BlogPage() {
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent"></div>
 
                 {/* Featured Badge */}
                 <div className="absolute top-6 left-6">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className="px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold rounded-full shadow-lg"
+                    className="px-4 py-2 bg-linear-to-r from-yellow-400 to-orange-400 text-black text-sm font-bold rounded-full shadow-lg"
                   >
                     ⭐ FEATURED
                   </motion.div>
@@ -298,7 +298,7 @@ export default function BlogPage() {
               <div className="p-8 md:p-10">
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-lg">
                         {featuredPost.title.charAt(0)}
                       </span>
@@ -388,7 +388,7 @@ export default function BlogPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Latest Articles
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
+          <div className="w-32 h-1.5 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 mx-auto rounded-full"></div>
           <p className="text-gray-600 dark:text-gray-300 text-lg mt-4 max-w-2xl mx-auto">
             Explore our collection of in-depth tutorials, tips, and insights
           </p>
@@ -401,7 +401,7 @@ export default function BlogPage() {
             className="text-center py-24"
           >
             <div className="relative mb-8">
-              <div className="w-24 h-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-24 h-24 bg-linear-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <svg
                   className="w-12 h-12 text-white"
                   fill="none"
@@ -436,7 +436,7 @@ export default function BlogPage() {
                   setSelectedCategory("All");
                   setSortBy("newest");
                 }}
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="px-8 py-4 bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Clear All Filters
               </motion.button>
@@ -474,7 +474,7 @@ export default function BlogPage() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
@@ -523,7 +523,7 @@ export default function BlogPage() {
                     </div>
 
                     <Link href={`/blogs/${post.id}`}>
-                      <motion.button
+                      <motion.div
                         whileHover={{ scale: 1.05, x: 3 }}
                         whileTap={{ scale: 0.95 }}
                         className="flex items-center text-indigo-600 dark:text-indigo-400 font-semibold text-sm hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-300"
@@ -542,7 +542,7 @@ export default function BlogPage() {
                             d="M17 8l4 4m0 0l-4 4m4-4H3"
                           />
                         </svg>
-                      </motion.button>
+                      </motion.div>
                     </Link>
                   </div>
                 </div>

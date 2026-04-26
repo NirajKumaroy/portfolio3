@@ -10,7 +10,7 @@ import { useTheme } from "@/app/context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import img from "../../public/logoai1.png";
+import logo from "../../public/logoimg.png";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -34,7 +34,9 @@ export default function Navbar() {
       <div className="container max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-24">
           <Link href="/" className="text-xl font-bold text-red-400">
-            <Image className="w-32 h-16 mb-2 " src={img} alt="" />
+            <Image className="w-32 h-16 mb-2 " src={logo} alt="Company Logo" 
+              priority
+            />
           </Link>
 
           {/* Desktop Menu */}

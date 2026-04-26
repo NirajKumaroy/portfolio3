@@ -191,9 +191,10 @@ export default function Home() {
 
             <Image
               src={logo}
-              alt="Hero Banner"
+              alt="Hero Image"
               width={192}
               height={256}
+              priority
               className="w-48 h-auto sm:w-64 md:w-72 lg:w-80 xl:w-96 object-contain"
             />
           </motion.div>

@@ -48,7 +48,7 @@ useGLTF.preload("/Models/robot.glb");
 
 export default function RobotCanvas() {
   return (
-    <div className="bg-white dark:bg-gradient-to-r from-blue-500 to-purple-500 w-full h-[100dvh] md:h-screen relative">
+    <div className="bg-white dark:bg-linear-to-r from-blue-500 to-purple-500 w-full h-dvh md:h-screen relative">
       <Canvas camera={{ position: [0, 1, 4], fov: 45 }}>
         <ambientLight intensity={1.5} />
         <directionalLight position={[0, 5, 5]} intensity={1} />
